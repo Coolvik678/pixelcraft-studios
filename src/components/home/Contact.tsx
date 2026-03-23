@@ -8,15 +8,28 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    try {
+      await fetch("https://formsubmit.co/ajax/myovik@gmail.com", {
+        method: "POST",
+        body: formData,
+      });
+      
       setIsSubmitting(false);
       setIsSuccess(true);
-      setTimeout(() => setIsSuccess(false), 3000);
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+      setTimeout(() => setIsSuccess(false), 5000);
+      form.reset();
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setIsSubmitting(false);
+      alert("Something went wrong joining the form. Please try again.");
+    }
   };
 
   return (
@@ -108,31 +121,36 @@ export default function Contact() {
             ) : null}
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              <input type="hidden" name="_subject" value="New Website Inquiry: PixelCraft Studios" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="text" name="_honey" style={{ display: 'none' }} />
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
-                  <input type="text" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0D9488] outline-none" placeholder="John Doe" />
+                  <input type="text" name="name" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0D9488] outline-none" placeholder="John Doe" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                  <input type="tel" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0D9488] outline-none" placeholder="+91 90000 00000" />
+                  <input type="tel" name="phone" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0D9488] outline-none" placeholder="+91 90000 00000" />
                 </div>
               </div>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Business Type</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0D9488] outline-none" placeholder="E.g. Clinic, Ecommerce, Agency" />
+                  <input type="text" name="businessType" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0D9488] outline-none" placeholder="E.g. Clinic, Ecommerce, Agency" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">City</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0D9488] outline-none" placeholder="E.g. Mumbai" />
+                  <input type="text" name="city" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0D9488] outline-none" placeholder="E.g. Mumbai" />
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Estimated Budget</label>
-                <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0D9488] outline-none bg-white">
+                <select name="budget" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0D9488] outline-none bg-white">
                   <option>₹10,000 - ₹20,000</option>
                   <option>₹20,000 - ₹50,000</option>
                   <option>₹50,000+</option>
@@ -141,7 +159,7 @@ export default function Contact() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <textarea required rows={4} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0D9488] outline-none resize-none" placeholder="Tell us about your project requirements..."></textarea>
+                <textarea name="message" required rows={4} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0D9488] outline-none resize-none" placeholder="Tell us about your project requirements..."></textarea>
               </div>
 
               <button
