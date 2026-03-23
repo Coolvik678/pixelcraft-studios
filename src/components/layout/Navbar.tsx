@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
@@ -37,8 +38,8 @@ export default function Navbar() {
         <div className="container mx-auto px-6 lg:px-12 w-full max-w-7xl flex items-center justify-between">
           
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center font-bold text-white text-xl shadow-md transition-transform group-hover:scale-105">
-              P
+            <div className="relative w-10 h-10 transition-transform group-hover:scale-105 drop-shadow-md">
+              <Image src="/logo.png" alt="PixelCraft Studios Logo" fill className="object-contain" priority />
             </div>
             <span className="font-bold text-2xl tracking-tight text-gray-900">
               PixelCraft <span className="text-primary">Studios</span>

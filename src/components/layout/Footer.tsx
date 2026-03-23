@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, MessageCircle } from "lucide-react";
 
 export default function Footer() {
@@ -10,8 +11,8 @@ export default function Footer() {
           {/* Brand - Exactly ONE logo */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6 group inline-flex">
-              <div className="w-10 h-10 bg-[#0D9488] rounded-lg flex items-center justify-center font-heading font-bold text-xl text-white shadow-md">
-                P
+              <div className="relative w-10 h-10 drop-shadow-md">
+                <Image src="/logo.png" alt="PixelCraft Studios Logo" fill className="object-contain" />
               </div>
               <span className="font-heading font-bold text-2xl text-white tracking-tight">PixelCraft <span className="text-[#0D9488]">Studios</span></span>
             </Link>

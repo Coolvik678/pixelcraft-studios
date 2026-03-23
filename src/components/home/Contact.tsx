@@ -133,10 +133,9 @@ export default function Contact() {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Estimated Budget</label>
                 <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0D9488] outline-none bg-white">
-                  <option>₹3,000 - ₹5,000</option>
-                  <option>₹5,000 - ₹10,000</option>
                   <option>₹10,000 - ₹20,000</option>
-                  <option>₹20,000+</option>
+                  <option>₹20,000 - ₹50,000</option>
+                  <option>₹50,000+</option>
                 </select>
               </div>
 
