@@ -35,7 +35,7 @@ export default function ClinicExperience() {
   ];
 
   return (
-    <section id="experience" className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="experience" className="py-28 lg:py-36 bg-slate-50 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-7xl">
         
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -85,24 +85,24 @@ export default function ClinicExperience() {
 
             {/* Clinic Environment Visual Collage Box */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-800 shadow-md group">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-800 shadow-md group border border-white/20">
                 <div 
                   className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-500"
                   style={{ backgroundImage: `url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80')` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-                <span className="absolute bottom-3 left-3 text-[11px] font-bold text-white bg-slate-900/80 px-2.5 py-1 rounded-md backdrop-blur-sm">
+                <span className="absolute bottom-3 left-3 text-[11px] font-bold text-white bg-slate-900/80 px-2.5 py-1 rounded-xl backdrop-blur-sm">
                   Mint Consultation Suite
                 </span>
               </div>
 
-              <div className="relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-800 shadow-md group">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-800 shadow-md group border border-white/20">
                 <div 
                   className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-500"
                   style={{ backgroundImage: `url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80')` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-                <span className="absolute bottom-3 left-3 text-[11px] font-bold text-white bg-slate-900/80 px-2.5 py-1 rounded-md backdrop-blur-sm">
+                <span className="absolute bottom-3 left-3 text-[11px] font-bold text-white bg-slate-900/80 px-2.5 py-1 rounded-xl backdrop-blur-sm">
                   Operatory Chair & UV Unit
                 </span>
               </div>

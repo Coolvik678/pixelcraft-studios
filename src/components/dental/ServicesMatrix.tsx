@@ -101,11 +101,11 @@ export default function ServicesMatrix({ onOpenBooking }: ServicesMatrixProps) {
   };
 
   return (
-    <section id="services" className="py-24 bg-white relative overflow-hidden">
+    <section id="services" className="py-28 lg:py-36 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-7xl">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A7E8C]/10 text-[#0A7E8C] text-xs font-bold uppercase tracking-wider mb-4">
             <Sparkle className="w-3.5 h-3.5" /> Multispeciality Dental Focus
           </div>
@@ -137,7 +137,7 @@ export default function ServicesMatrix({ onOpenBooking }: ServicesMatrixProps) {
               >
                 <div>
                   {/* Top Icon Box */}
-                  <div className="w-12 h-12 rounded-xl bg-white text-[#0A7E8C] group-hover:bg-[#0A7E8C] group-hover:text-white flex items-center justify-center shadow-sm border border-slate-200/60 group-hover:border-[#0A7E8C] transition-all duration-300 mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-white text-[#0A7E8C] group-hover:bg-[#0A7E8C] group-hover:text-white flex items-center justify-center shadow-sm border border-slate-200/60 group-hover:border-[#0A7E8C] transition-all duration-300 mb-6">
                     <Icon className="w-6 h-6 transition-transform group-hover:scale-110" />
                   </div>
 
@@ -154,9 +154,14 @@ export default function ServicesMatrix({ onOpenBooking }: ServicesMatrixProps) {
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-[#0A7E8C] group-hover:text-[#075963]">
-                  <span>Learn Details & Pricing</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                {/* Sleek Ghost Circular Arrow Micro-Interaction */}
+                <div className="pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                  <span className="text-xs font-semibold text-slate-400 group-hover:text-[#0A7E8C] transition-colors">
+                    View Overview
+                  </span>
+                  <div className="w-9 h-9 rounded-full bg-[#0A7E8C]/10 text-[#0A7E8C] group-hover:bg-[#0A7E8C] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm">
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                  </div>
                 </div>
               </motion.div>
             );

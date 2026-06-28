@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Star, Quote, ChevronLeft, ChevronRight, CheckCircle2, Award, ThumbsUp } from "lucide-react";
+import { Star, Quote, ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
 
 export default function TestimonialsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -51,7 +51,7 @@ export default function TestimonialsCarousel() {
   };
 
   return (
-    <section id="testimonials" className="py-24 bg-white relative overflow-hidden">
+    <section id="testimonials" className="py-28 lg:py-36 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-7xl">
         
         {/* Header */}
