@@ -1,41 +1,50 @@
 "use client";
 
-import { useEffect } from "react";
-import Navbar from "@/components/layout/Navbar";
-import Hero from "@/components/layout/Hero";
-import VideoShowcase from "@/components/home/VideoShowcase";
-import Services from "@/components/home/Services";
-import Portfolio from "@/components/home/Portfolio";
-import Stats from "@/components/home/Stats";
-import Testimonials from "@/components/home/Testimonials";
-import ReviewForm from "@/components/home/ReviewForm";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
-import HowItWorks from "@/components/home/HowItWorks";
-import Contact from "@/components/home/Contact";
-import Footer from "@/components/layout/Footer";
+import { useState, useEffect } from "react";
+import ToothLoader from "@/components/dental/ToothLoader";
+import Navbar from "@/components/dental/Navbar";
+import Hero from "@/components/dental/Hero";
+import ServicesMatrix from "@/components/dental/ServicesMatrix";
+import ClinicExperience from "@/components/dental/ClinicExperience";
+import TestimonialsCarousel from "@/components/dental/TestimonialsCarousel";
+import ContactFooter from "@/components/dental/ContactFooter";
+import BookingModal from "@/components/dental/BookingModal";
+import WhatsAppFAB from "@/components/dental/WhatsAppFAB";
 
 export default function Home() {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
   useEffect(() => {
-    // Prevent browser from restoring scroll position to the bottom of the page on refresh/load
+    // Prevent browser from restoring scroll position to the bottom on refresh
     window.history.scrollRestoration = "manual";
     window.scrollTo(0, 0);
   }, []);
+
+  const handleOpenBooking = () => setIsBookingOpen(true);
+  const handleCloseBooking = () => setIsBookingOpen(false);
+
   return (
-    <div className="relative flex flex-col min-h-screen">
-      <Navbar />
+    <div className="relative flex flex-col min-h-screen bg-white text-slate-900 selection:bg-[#0A7E8C] selection:text-white">
+      {/* Dental Preloader */}
+      <ToothLoader />
+
+      {/* Navigation Bar */}
+      <Navbar onOpenBooking={handleOpenBooking} />
+
+      {/* Main Sections */}
       <main className="flex-grow">
-        <Hero />
-        <VideoShowcase />
-        <Services />
-        <Portfolio />
-        <Stats />
-        <Testimonials />
-        <ReviewForm />
-        <WhyChooseUs />
-        <HowItWorks />
-        <Contact />
+        <Hero onOpenBooking={handleOpenBooking} />
+        <ServicesMatrix onOpenBooking={handleOpenBooking} />
+        <ClinicExperience />
+        <TestimonialsCarousel />
       </main>
-      <Footer />
+
+      {/* Contact & Location Footer */}
+      <ContactFooter onOpenBooking={handleOpenBooking} />
+
+      {/* Floating Interactive Action Elements */}
+      <WhatsAppFAB />
+      <BookingModal isOpen={isBookingOpen} onClose={handleCloseBooking} />
     </div>
   );
 }
