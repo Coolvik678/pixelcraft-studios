@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { UserCheck, Stethoscope, ShieldCheck, Smile, Sparkles, CheckCircle2, Award, HeartHandshake } from "lucide-react";
+import Image from "next/image";
 
 export default function ClinicExperience() {
   const whyChooseUs = [
@@ -36,36 +37,58 @@ export default function ClinicExperience() {
 
             <div className="space-y-4 text-slate-600 text-base sm:text-lg leading-relaxed">
               <p>
-                <strong>Dr. Chavhan’s Multispeciality Dental Clinic</strong> is a trusted dental care center in Aundh, Pune, offering high-quality and ethical dental treatments.
+                <strong>Dr. Chavhan’s Multispeciality Dental Clinic</strong> is a trusted dental care center located in Chanchal Apartment, near Bank of Maharashtra, Sindh Society, Aundh, Pune.
               </p>
               <p className="text-sm sm:text-base text-slate-600">
-                Under the guidance of Dr. Chavhan, the clinic focuses on patient comfort, modern dental technology, and strict hygiene standards. Each patient is treated with care and personal attention to ensure the best dental results.
+                Under the expert guidance of Dr. Gurudeo Shamrao Chavhan (BDS, MDS), the clinic focuses on patient comfort, advanced painless technology, and strict sterilization protocols to deliver ethical, affordable care for all age groups.
               </p>
             </div>
 
-            {/* Compact Clinical Photo Gallery */}
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-800 shadow-md group border border-white/20">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-85 group-hover:scale-105 transition-transform duration-500"
-                  style={{ backgroundImage: `url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80')` }}
+            {/* Real Clinic Photos Showcase (Grid of 3 actual images) */}
+            <div className="grid grid-cols-3 gap-3 pt-2">
+              
+              {/* Image 1: Consultation Suite Desk */}
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900 shadow-md group border border-white/40">
+                <Image
+                  src="/clinic/consultation-desk.jpg"
+                  alt="Dr. Chavhan Consultation Desk"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-                <span className="absolute bottom-3 left-3 text-[11px] font-bold text-white bg-slate-900/80 px-2.5 py-1 rounded-xl backdrop-blur-sm">
-                  Mint Consultation Desk
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                <span className="absolute bottom-2 left-2 right-2 text-[10px] font-bold text-white bg-slate-900/80 px-2 py-1 rounded-lg text-center backdrop-blur-sm">
+                  Executive Suite
                 </span>
               </div>
 
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-800 shadow-md group border border-white/20">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-85 group-hover:scale-105 transition-transform duration-500"
-                  style={{ backgroundImage: `url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80')` }}
+              {/* Image 2: Night Entrance Sign */}
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900 shadow-md group border border-white/40">
+                <Image
+                  src="/clinic/clinic-sign-night.jpg"
+                  alt="Dr. Chavhan Clinic Signboard"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-                <span className="absolute bottom-3 left-3 text-[11px] font-bold text-white bg-slate-900/80 px-2.5 py-1 rounded-xl backdrop-blur-sm">
-                  Clinical Care Suite
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                <span className="absolute bottom-2 left-2 right-2 text-[10px] font-bold text-white bg-slate-900/80 px-2 py-1 rounded-lg text-center backdrop-blur-sm">
+                  Clinic Entrance
                 </span>
               </div>
+
+              {/* Image 3: Endodontic Rubber Dam */}
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-900 shadow-md group border border-white/40">
+                <Image
+                  src="/clinic/clinical-procedure.jpg"
+                  alt="Specialized Endodontic Care"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                <span className="absolute bottom-2 left-2 right-2 text-[10px] font-bold text-white bg-slate-900/80 px-2 py-1 rounded-lg text-center backdrop-blur-sm">
+                  Painless Procedure
+                </span>
+              </div>
+
             </div>
           </motion.div>
 
@@ -110,7 +133,9 @@ export default function ClinicExperience() {
                 <span className="flex items-center gap-1.5 text-[#0A7E8C]">
                   <ShieldCheck className="w-4 h-4" /> 100% Ethical Practice
                 </span>
-                <span>Aundh, Pune</span>
+                <a href="https://maps.app.goo.gl/WG3H85yBkr4neGrb9?g_st=aw" target="_blank" rel="noopener noreferrer" className="hover:text-[#0A7E8C] underline">
+                  Sindh Society, Aundh, Pune
+                </a>
               </div>
             </div>
           </motion.div>

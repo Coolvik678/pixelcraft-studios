@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock, Navigation, Calendar, MessageCircle } from "lucide-react";
+import Image from "next/image";
 
 interface ContactFooterProps {
   onOpenBooking: () => void;
@@ -58,7 +59,7 @@ export default function ContactFooter({ onOpenBooking }: ContactFooterProps) {
             </div>
 
             <p className="text-xs text-slate-400 leading-relaxed pt-2">
-              📍 Conveniently located near Bank of Maharashtra in Aundh, Pune.
+              📍 Conveniently located near Bank of Maharashtra in Sindh Society, Aundh, Pune.
             </p>
           </div>
 
@@ -97,35 +98,31 @@ export default function ContactFooter({ onOpenBooking }: ContactFooterProps) {
             </div>
           </div>
 
-          {/* Column 3: Address & Location (4 cols) */}
+          {/* Column 3: Address & Precise Location (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
-            <h4 className="font-heading font-bold text-xl text-white mb-2">Location & Address</h4>
+            <h4 className="font-heading font-bold text-xl text-white mb-2">Location & Map</h4>
             
             <div className="rounded-2xl overflow-hidden border border-slate-800 bg-slate-800 relative h-44 group">
-              <iframe
-                title="Dr. Chavhan Dental Clinic Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.261234567!2d73.805!3d18.56!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDMzJzM2LjAiTiA3M8KwNDgnMTguMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0, filter: "grayscale(0.6) contrast(1.2)" }}
-                allowFullScreen={false}
-                loading="lazy"
-                className="w-full h-full opacity-70 group-hover:opacity-90 transition-opacity"
+              <Image
+                src="/clinic/clinic-sign-night.jpg"
+                alt="Clinic Location Map Preview"
+                fill
+                className="object-cover opacity-60 group-hover:opacity-80 transition-opacity"
               />
-              <div className="absolute inset-0 bg-slate-900/40 pointer-events-none" />
+              <div className="absolute inset-0 bg-slate-900/50 pointer-events-none" />
               
               <a
-                href="https://maps.google.com/?q=Chanchal+Apartment+Near+Bank+of+Maharashtra+Aundh+Pune+411007"
+                href="https://maps.app.goo.gl/WG3H85yBkr4neGrb9?g_st=aw"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute bottom-3 left-3 right-3 bg-slate-900/90 hover:bg-[#0A7E8C] text-white text-xs font-bold p-2.5 rounded-xl backdrop-blur-md transition-colors flex items-center justify-center gap-2 shadow-lg"
+                className="absolute bottom-3 left-3 right-3 bg-[#0A7E8C] hover:bg-[#075963] text-white text-xs font-bold p-3 rounded-xl transition-colors flex items-center justify-center gap-2 shadow-xl"
               >
-                <Navigation className="w-4 h-4" /> Open Google Maps
+                <Navigation className="w-4 h-4" /> Open Exact Location in Google Maps
               </a>
             </div>
 
-            <p className="text-xs text-slate-400 leading-normal">
-              Chanchal Apartment, Near Bank of Maharashtra, Aundh, Pune – 411007
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Chanchal Apartment, nearby Bank of Maharashtra, Sindh Society, Ward No. 8, Sadhu Vasvani Nagar, Aundh, Pune, Maharashtra 411007
             </p>
           </div>
 
