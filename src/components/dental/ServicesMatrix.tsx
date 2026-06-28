@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Sparkles, Shield, Smile, Activity, Sparkle, ArrowRight, X, Check } from "lucide-react";
+import { Sparkles, Shield, Smile, Activity, Sparkle, ArrowRight, X, Check, Stethoscope, Scissors, Award, HeartHandshake, Baby, Pill } from "lucide-react";
 
 interface ServicesMatrixProps {
   onOpenBooking: () => void;
@@ -13,10 +13,7 @@ interface ServiceDetail {
   title: string;
   category: string;
   description: string;
-  longDescription: string;
   icon: any;
-  highlights: string[];
-  duration: string;
 }
 
 export default function ServicesMatrix({ onOpenBooking }: ServicesMatrixProps) {
@@ -25,63 +22,87 @@ export default function ServicesMatrix({ onOpenBooking }: ServicesMatrixProps) {
   const services: ServiceDetail[] = [
     {
       id: 1,
-      title: "General & Preventive Dentistry",
-      category: "Hygiene & Maintenance",
-      description: "Comprehensive oral health examinations, ultrasonic scaling, cavity prevention, and pain-free restorative care.",
-      longDescription: "Preventive care is the foundation of long-term oral hygiene. At Dr. Chavhan's Dental Clinic, we utilize digital intraoral cameras and gentle ultrasonic scaling technology to clean plaque, prevent gum disease, and identify early cavities before they cause discomfort.",
-      icon: Shield,
-      highlights: [
-        "Ultrasonic Scaling & Polishing",
-        "Digital Intraoral Diagnostic Scans",
-        "Pain-free Tooth Composite Fillings",
-        "Gum Health & Periodontal Maintenance"
-      ],
-      duration: "30 - 45 mins"
+      title: "General Dentistry",
+      category: "Preventive Care",
+      description: "Comprehensive oral examinations, routine dental health checkups, and early cavity diagnostics.",
+      icon: Shield
     },
     {
       id: 2,
-      title: "Advanced Orthodontics & Aligners",
-      category: "Smile Alignment",
-      description: "Modern invisible clear aligners and precision ceramic braces tailored to align teeth discreetly and comfortably.",
-      longDescription: "Achieve a perfectly straight smile without traditional metal discomfort. Dr. Guru specializes in advanced orthodontic planning, utilizing 3D digital smile simulation to design clear aligners that fit seamlessly into your daily lifestyle.",
-      icon: Smile,
-      highlights: [
-        "Custom US-FDA Cleared Aligners",
-        "Esthetic Ceramic & Self-Ligating Braces",
-        "3D Digital Alignment Simulation",
-        "Retainer & Post-Treatment Care"
-      ],
-      duration: "Custom Treatment Plan"
+      title: "Root Canal Treatment (RCT)",
+      category: "Endodontic Care",
+      description: "Advanced single-sitting and multi-sitting painless root canal procedures to save infected teeth.",
+      icon: Stethoscope
     },
     {
       id: 3,
-      title: "Implantology & Prosthodontics",
-      category: "Permanent Restorations",
-      description: "Lifelong titanium dental implants, Zirconia crowns, and full-mouth rehabilitation engineered for natural bite force.",
-      longDescription: "Replace missing teeth permanently with biocompatible titanium implants that look, feel, and function exactly like natural teeth. Designed with precision computer-guided surgical technique for rapid healing.",
-      icon: Activity,
-      highlights: [
-        "Single & Multiple Tooth Implants",
-        "High-Translucency Zirconia Crowns",
-        "Bridges & Fixed Dentures",
-        "Guided Bone Regeneration"
-      ],
-      duration: "45 - 60 mins"
+      title: "Tooth Extraction (Simple & Surgical)",
+      category: "Oral Surgery",
+      description: "Gentle, painless extraction of damaged teeth and wisdom teeth impactions with rapid healing.",
+      icon: Scissors
     },
     {
       id: 4,
-      title: "Cosmetic Dentistry & Smile Makeovers",
-      category: "Aesthetic Excellence",
-      description: "Laser teeth whitening, ultra-thin porcelain veneers, and cosmetic bonding designed to craft your dream aesthetic smile.",
-      longDescription: "Enhance your confidence with a customized smile transformation. We analyze facial symmetry, tooth color, and gingival aesthetics to deliver radiant, natural-looking tooth whitening and porcelain veneer restorations.",
-      icon: Sparkles,
-      highlights: [
-        "In-Office Laser Tooth Whitening",
-        "Ultra-Thin Porcelain Veneers",
-        "Diastema (Gap) Cosmetic Closure",
-        "Enamel Micro-contouring"
-      ],
-      duration: "45 - 90 mins"
+      title: "Dental Fillings",
+      category: "Restorative Dentistry",
+      description: "Esthetic tooth-colored composite restorations to repair decay and restore natural tooth structure.",
+      icon: Check
+    },
+    {
+      id: 5,
+      title: "Teeth Cleaning & Polishing",
+      category: "Hygiene & Maintenance",
+      description: "Ultrasonic scaling and polishing to eliminate stain, calculus, tartar, and prevent gum infection.",
+      icon: Sparkles
+    },
+    {
+      id: 6,
+      title: "Dental Crowns & Bridges",
+      category: "Fixed Restorations",
+      description: "High-translucency Zirconia and ceramic crowns to protect weakened teeth and restore bite force.",
+      icon: Award
+    },
+    {
+      id: 7,
+      title: "Dentures (Complete & Partial)",
+      category: "Removable Prosthetics",
+      description: "Custom-fitted complete and partial flexible dentures designed for natural comfort and speech.",
+      icon: HeartHandshake
+    },
+    {
+      id: 8,
+      title: "Dental Implants",
+      category: "Permanent Replacement",
+      description: "Biocompatible titanium implants serving as lifelong permanent replacements for missing teeth.",
+      icon: Activity
+    },
+    {
+      id: 9,
+      title: "Braces & Aligners",
+      category: "Orthodontics",
+      description: "Esthetic ceramic braces and invisible clear aligners for precise tooth alignment.",
+      icon: Smile
+    },
+    {
+      id: 10,
+      title: "Cosmetic Dentistry (Smile Designing & Whitening)",
+      category: "Smile Aesthetics",
+      description: "Laser teeth whitening, diastema closure, and digital smile designing for a radiant smile.",
+      icon: Sparkle
+    },
+    {
+      id: 11,
+      title: "Pediatric (Child) Dentistry",
+      category: "Children's Care",
+      description: "Gentle, specialized preventive and restorative dental care tailored for children in a comfortable setting.",
+      icon: Baby
+    },
+    {
+      id: 12,
+      title: "Gum Treatment (Periodontal Care)",
+      category: "Gum Health",
+      description: "Comprehensive therapy for bleeding gums, periodontitis, and deep periodontal maintenance.",
+      icon: Pill
     }
   ];
 
@@ -90,14 +111,14 @@ export default function ServicesMatrix({ onOpenBooking }: ServicesMatrixProps) {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15
+        staggerChildren: 0.08
       }
     }
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
   };
 
   return (
@@ -107,23 +128,23 @@ export default function ServicesMatrix({ onOpenBooking }: ServicesMatrixProps) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A7E8C]/10 text-[#0A7E8C] text-xs font-bold uppercase tracking-wider mb-4">
-            <Sparkle className="w-3.5 h-3.5" /> Multispeciality Dental Focus
+            <Sparkle className="w-3.5 h-3.5" /> Treatments Offered
           </div>
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight mb-4">
-            Comprehensive Dental Solutions in <span className="text-[#0A7E8C]">Aundh, Pune</span>
+            Services Offered at Our <span className="text-[#0A7E8C]">Aundh Clinic</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            From routine preventive checkups to complex implant dentistry, our treatments combine clinical expertise with gentle patient-first care.
+            High-quality, ethical, and painless dental treatments provided under strict hygiene standards.
           </p>
         </div>
 
-        {/* Responsive Grid Matrix */}
+        {/* Responsive Grid Matrix for 12 Services */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
           {services.map((service) => {
             const Icon = service.icon;
@@ -131,36 +152,32 @@ export default function ServicesMatrix({ onOpenBooking }: ServicesMatrixProps) {
               <motion.div
                 key={service.id}
                 variants={cardVariants}
-                whileHover={{ y: -8, transition: { duration: 0.2 } }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
                 onClick={() => setSelectedService(service)}
-                className="group relative rounded-2xl p-7 bg-slate-50 border border-slate-200/80 hover:border-[#0A7E8C]/50 hover:bg-white hover:shadow-2xl hover:shadow-[#0A7E8C]/10 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                className="group relative rounded-2xl p-6 bg-slate-50 border border-slate-200/80 hover:border-[#0A7E8C]/50 hover:bg-white hover:shadow-xl hover:shadow-[#0A7E8C]/10 transition-all duration-300 cursor-pointer flex flex-col justify-between"
               >
                 <div>
-                  {/* Top Icon Box */}
-                  <div className="w-12 h-12 rounded-2xl bg-white text-[#0A7E8C] group-hover:bg-[#0A7E8C] group-hover:text-white flex items-center justify-center shadow-sm border border-slate-200/60 group-hover:border-[#0A7E8C] transition-all duration-300 mb-6">
-                    <Icon className="w-6 h-6 transition-transform group-hover:scale-110" />
+                  <div className="w-11 h-11 rounded-xl bg-white text-[#0A7E8C] group-hover:bg-[#0A7E8C] group-hover:text-white flex items-center justify-center shadow-sm border border-slate-200/60 group-hover:border-[#0A7E8C] transition-all duration-300 mb-4">
+                    <Icon className="w-5 h-5 transition-transform group-hover:scale-110" />
                   </div>
 
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-600 mb-2 block">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-600 mb-1.5 block">
                     {service.category}
                   </span>
                   
-                  <h3 className="font-heading font-bold text-xl text-slate-900 mb-3 group-hover:text-[#0A7E8C] transition-colors">
+                  <h3 className="font-heading font-bold text-lg text-slate-900 mb-2 group-hover:text-[#0A7E8C] transition-colors leading-snug">
                     {service.title}
                   </h3>
 
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
                     {service.description}
                   </p>
                 </div>
 
-                {/* Sleek Ghost Circular Arrow Micro-Interaction */}
-                <div className="pt-4 border-t border-slate-200/60 flex items-center justify-between">
-                  <span className="text-xs font-semibold text-slate-400 group-hover:text-[#0A7E8C] transition-colors">
-                    View Overview
-                  </span>
-                  <div className="w-9 h-9 rounded-full bg-[#0A7E8C]/10 text-[#0A7E8C] group-hover:bg-[#0A7E8C] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm">
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                <div className="pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-[#0A7E8C]">
+                  <span>Consultation Details</span>
+                  <div className="w-8 h-8 rounded-full bg-[#0A7E8C]/10 text-[#0A7E8C] group-hover:bg-[#0A7E8C] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm">
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                   </div>
                 </div>
               </motion.div>
@@ -204,30 +221,11 @@ export default function ServicesMatrix({ onOpenBooking }: ServicesMatrixProps) {
               </h3>
 
               <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                {selectedService.longDescription}
+                {selectedService.description} At Dr. Chavhan’s Multispeciality Dental Clinic, all treatments are delivered using advanced painless techniques in a pristine, hygienic clinical environment.
               </p>
 
-              <div className="mb-6">
-                <h4 className="font-heading font-bold text-sm text-slate-900 uppercase tracking-wider mb-3">
-                  Clinical Highlights & Care:
-                </h4>
-                <ul className="space-y-2">
-                  {selectedService.highlights.map((h, idx) => (
-                    <li key={idx} className="flex items-center gap-2.5 text-xs font-medium text-slate-700">
-                      <div className="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3" />
-                      </div>
-                      <span>{h}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] uppercase text-slate-400 font-semibold block">Estimated Session</span>
-                  <span className="text-xs font-bold text-slate-800">{selectedService.duration}</span>
-                </div>
+                <span className="text-xs font-bold text-[#0A7E8C]">Ethical & Affordable Care</span>
 
                 <button
                   onClick={() => {

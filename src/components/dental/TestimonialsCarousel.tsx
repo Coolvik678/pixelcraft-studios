@@ -10,35 +10,27 @@ export default function TestimonialsCarousel() {
   const testimonials = [
     {
       id: 1,
-      quote: "I can't say enough great things about Dr. Guru! He is extremely skilled, professional, knowledgeable, and always takes time to answer all of my questions thoroughly. Besides, every treatment is top notch... Must Go!",
+      quote: "Very nice experience. Happy with the treatment as well as staff behaviour.",
       author: "Verified Patient",
-      treatment: "Multispeciality Dental Care",
+      treatment: "Dental Treatment",
       rating: 5,
-      date: "Recent Google Review"
+      date: "Verified Review"
     },
     {
       id: 2,
-      quote: "Very nice experience happy with their treatment as well as staff behaviour. Highly recommend Dr. Chavhan's clinic in Aundh for anyone seeking gentle, transparent care.",
-      author: "Local Resident",
-      treatment: "Preventive Care & Cleaning",
+      quote: "Doctors are very kind and provide excellent treatment at low cost. Being around them brings peace of mind.",
+      author: "Patient",
+      treatment: "Affordable Care",
       rating: 5,
-      date: "Verified Google Review"
+      date: "Verified Review"
     },
     {
       id: 3,
-      quote: "Highly recommend this place for anyone looking for quality dental care! Dr. Guru explained every procedure clearly and made sure I was completely comfortable.",
-      author: "P. Deshmukh",
-      treatment: "Orthodontic Consultation",
+      quote: "Clean clinic, painless treatment, and friendly doctor. Highly recommended.",
+      author: "Local Resident",
+      treatment: "Painless Procedure",
       rating: 5,
-      date: "Verified Patient"
-    },
-    {
-      id: 4,
-      quote: "You can expect overall good Dental service here in this locality. Pristine hygiene, modern equipment, and prompt appointment schedules.",
-      author: "Aundh Patient",
-      treatment: "Routine Checkup",
-      rating: 5,
-      date: "Verified Google Review"
+      date: "Verified Review"
     }
   ];
 
@@ -55,20 +47,19 @@ export default function TestimonialsCarousel() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-7xl">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-center md:text-left">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-4">
-              <Star className="w-3.5 h-3.5 fill-current text-amber-500" /> Community Trust Signals
+              <Star className="w-3.5 h-3.5 fill-current text-amber-500" /> Patient Feedback
             </div>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight">
-              5.0-Star Rated Patient Stories
+              Patient Testimonials
             </h2>
           </div>
 
-          {/* Google Verified Banner */}
-          <div className="glass-card px-5 py-3 rounded-2xl border border-slate-200 flex items-center gap-4 shadow-sm">
-            <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 font-extrabold text-lg flex items-center justify-center">
-              G
+          <div className="glass-card px-5 py-3 rounded-2xl border border-slate-200 flex items-center justify-center gap-4 shadow-sm">
+            <div className="w-10 h-10 rounded-full bg-emerald-50 text-[#10B981] font-extrabold text-lg flex items-center justify-center">
+              ★
             </div>
             <div>
               <div className="flex items-center text-amber-400">
@@ -76,7 +67,7 @@ export default function TestimonialsCarousel() {
                   <Star key={i} className="w-3.5 h-3.5 fill-current" />
                 ))}
               </div>
-              <span className="text-xs font-bold text-slate-800">5.0 Out of 5 (41+ Google Reviews)</span>
+              <span className="text-xs font-bold text-slate-800">High Patient Satisfaction</span>
             </div>
           </div>
         </div>
@@ -94,7 +85,7 @@ export default function TestimonialsCarousel() {
             >
               <Quote className="w-20 h-20 text-[#0A7E8C]/10 absolute -top-4 -left-4 pointer-events-none" />
 
-              <div className="relative z-10 flex flex-col items-start">
+              <div className="relative z-10 flex flex-col items-start text-left">
                 {/* Rating Stars */}
                 <div className="flex items-center gap-1 text-amber-400 mb-6">
                   {[...Array(testimonials[currentIndex].rating)].map((_, i) => (

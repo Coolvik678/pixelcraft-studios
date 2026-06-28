@@ -7,6 +7,7 @@ import Hero from "@/components/dental/Hero";
 import ServicesMatrix from "@/components/dental/ServicesMatrix";
 import ClinicExperience from "@/components/dental/ClinicExperience";
 import TestimonialsCarousel from "@/components/dental/TestimonialsCarousel";
+import FAQSection from "@/components/dental/FAQSection";
 import ContactFooter from "@/components/dental/ContactFooter";
 import BookingModal from "@/components/dental/BookingModal";
 import WhatsAppFAB from "@/components/dental/WhatsAppFAB";
@@ -34,9 +35,10 @@ export default function Home() {
       {/* Main Sections */}
       <main className="flex-grow">
         <Hero onOpenBooking={handleOpenBooking} />
-        <ServicesMatrix onOpenBooking={handleOpenBooking} />
         <ClinicExperience />
+        <ServicesMatrix onOpenBooking={handleOpenBooking} />
         <TestimonialsCarousel />
+        <FAQSection />
       </main>
 
       {/* Contact & Location Footer */}

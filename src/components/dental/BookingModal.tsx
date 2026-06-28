@@ -14,38 +14,41 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    treatment: "General Dental Consultation",
+    treatment: "General Dentistry",
     preferredDate: "",
     preferredTime: "Morning (10 AM - 1 PM)",
     notes: ""
   });
 
   const treatments = [
-    "General Dental Consultation",
-    "Teeth Cleaning & Polishing",
-    "Orthodontic / Braces & Aligners",
-    "Dental Implants & Crowns",
+    "General Dentistry",
     "Root Canal Treatment (RCT)",
-    "Cosmetic Whitening & Makeover",
-    "Pediatric / Child Dentistry"
+    "Tooth Extraction",
+    "Dental Fillings",
+    "Teeth Cleaning & Polishing",
+    "Dental Crowns & Bridges",
+    "Dentures (Complete & Partial)",
+    "Dental Implants",
+    "Braces & Aligners",
+    "Cosmetic Dentistry & Whitening",
+    "Pediatric (Child) Dentistry",
+    "Gum Treatment (Periodontal Care)"
   ];
 
   const timeSlots = [
-    "Morning (10 AM - 1 PM)",
-    "Afternoon (1 PM - 5 PM)",
+    "Morning (10 AM - 2 PM)",
     "Evening (5 PM - 9 PM)"
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Construct pre-filled WhatsApp message
+    // Construct pre-filled WhatsApp message for 8975889746
     const message = `Hello Dr. Chavhan's Multispeciality Dental Clinic!\nI would like to book a consultation.\n\n👤 *Patient Name:* ${formData.name}\n📞 *Phone:* ${formData.phone}\n🩺 *Treatment:* ${formData.treatment}\n📅 *Preferred Date:* ${formData.preferredDate || "Earliest Available"}\n⏰ *Preferred Time:* ${formData.preferredTime}\n📝 *Notes:* ${formData.notes || "None"}`;
 
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/918983821991?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/918975889746?text=${encodedMessage}`;
 
-    // Open WhatsApp in new tab
     window.open(whatsappUrl, "_blank");
 
     setStep("success");
@@ -59,7 +62,6 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6">
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -68,14 +70,12 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
             className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm"
           />
 
-          {/* Modal Card */}
           <motion.div
             initial={{ scale: 0.95, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
             className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden z-10 border border-slate-100"
           >
-            {/* Header */}
             <div className="bg-gradient-to-r from-[#0A7E8C] to-[#075963] p-6 text-white relative">
               <button
                 onClick={onClose}
@@ -94,7 +94,6 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </p>
             </div>
 
-            {/* Content Body */}
             <div className="p-6">
               {step === "success" ? (
                 <div className="py-8 text-center flex flex-col items-center justify-center">
@@ -105,7 +104,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     Booking Request Sent!
                   </h4>
                   <p className="text-slate-600 text-sm max-w-xs mx-auto">
-                    We have redirected your booking details to Dr. Guru's team on WhatsApp for instant slot confirmation.
+                    We have redirected your booking details to clinic reception on WhatsApp for instant slot confirmation.
                   </p>
                 </div>
               ) : (
@@ -140,7 +139,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                      Select Treatment Speciality
+                      Select Treatment
                     </label>
                     <select
                       value={formData.treatment}

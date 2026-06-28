@@ -27,12 +27,12 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         className={`fixed top-0 left-0 right-0 z-[9990] transition-all duration-300 ${
           isScrolled
             ? "glass-header py-3.5 shadow-sm"
-            : "bg-white/85 backdrop-blur-md py-4 border-b border-slate-100"
+            : "bg-white/90 backdrop-blur-md py-4 border-b border-slate-100"
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-7xl flex items-center justify-between">
           
-          {/* Minimalist Globe Favicon & Light Tracking Title */}
+          {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
             <div className="w-8 h-8 rounded-lg bg-teal-50 text-[#0A7E8C] flex items-center justify-center border border-[#0A7E8C]/20 transition-transform group-hover:scale-105 flex-shrink-0">
               <Globe className="w-4 h-4" />
@@ -44,19 +44,25 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             </div>
           </Link>
 
-          {/* Desktop Nav Items */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Desktop Nav Items (Exact Requested Navigation) */}
+          <nav className="hidden lg:flex items-center gap-7">
+            <a href="#" className="text-sm font-medium text-slate-700 hover:text-[#0A7E8C] transition-colors tracking-wide">
+              Home
+            </a>
+            <a href="#about" className="text-sm font-medium text-slate-700 hover:text-[#0A7E8C] transition-colors tracking-wide">
+              About Us
+            </a>
             <a href="#services" className="text-sm font-medium text-slate-700 hover:text-[#0A7E8C] transition-colors tracking-wide">
               Services
             </a>
-            <a href="#experience" className="text-sm font-medium text-slate-700 hover:text-[#0A7E8C] transition-colors tracking-wide">
-              Experience & Tech
-            </a>
             <a href="#testimonials" className="text-sm font-medium text-slate-700 hover:text-[#0A7E8C] transition-colors tracking-wide">
-              Reviews (5.0 ★)
+              Testimonials
+            </a>
+            <a href="#faqs" className="text-sm font-medium text-slate-700 hover:text-[#0A7E8C] transition-colors tracking-wide">
+              FAQs
             </a>
             <a href="#contact" className="text-sm font-medium text-slate-700 hover:text-[#0A7E8C] transition-colors tracking-wide">
-              Clinic & Location
+              Contact Us
             </a>
           </nav>
 
@@ -91,35 +97,25 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-x-0 top-[65px] z-[9989] bg-white border-b border-slate-200 shadow-xl p-6 lg:hidden flex flex-col gap-5"
+            className="fixed inset-x-0 top-[65px] z-[9989] bg-white border-b border-slate-200 shadow-xl p-6 lg:hidden flex flex-col gap-4"
           >
-            <a
-              href="#services"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-semibold text-slate-800 hover:text-[#0A7E8C] py-1 border-b border-slate-100"
-            >
-              Multispeciality Services
+            <a href="#" onClick={() => setMobileMenuOpen(false)} className="text-base font-semibold text-slate-800 hover:text-[#0A7E8C] py-1.5 border-b border-slate-100">
+              Home
             </a>
-            <a
-              href="#experience"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-semibold text-slate-800 hover:text-[#0A7E8C] py-1 border-b border-slate-100"
-            >
-              Clinic Experience & Equipment
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-base font-semibold text-slate-800 hover:text-[#0A7E8C] py-1.5 border-b border-slate-100">
+              About Us
             </a>
-            <a
-              href="#testimonials"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-semibold text-slate-800 hover:text-[#0A7E8C] py-1 border-b border-slate-100"
-            >
-              Verified Reviews (5.0 ★)
+            <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-base font-semibold text-slate-800 hover:text-[#0A7E8C] py-1.5 border-b border-slate-100">
+              Services Offered
             </a>
-            <a
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-base font-semibold text-slate-800 hover:text-[#0A7E8C] py-1 border-b border-slate-100"
-            >
-              Hours & Map Location
+            <a href="#testimonials" onClick={() => setMobileMenuOpen(false)} className="text-base font-semibold text-slate-800 hover:text-[#0A7E8C] py-1.5 border-b border-slate-100">
+              Testimonials
+            </a>
+            <a href="#faqs" onClick={() => setMobileMenuOpen(false)} className="text-base font-semibold text-slate-800 hover:text-[#0A7E8C] py-1.5 border-b border-slate-100">
+              Frequently Asked Questions
+            </a>
+            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-base font-semibold text-slate-800 hover:text-[#0A7E8C] py-1.5 border-b border-slate-100">
+              Contact Us
             </a>
 
             <div className="pt-2 flex flex-col gap-3">
@@ -133,10 +129,10 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                 <Calendar className="w-5 h-5" /> Book Appointment Now
               </button>
               <a
-                href="tel:+918983821991"
+                href="tel:8983821993"
                 className="w-full py-3 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm flex items-center justify-center gap-2"
               >
-                <PhoneCall className="w-4 h-4 text-[#0A7E8C]" /> Call Desk (+91 89838 21991)
+                <PhoneCall className="w-4 h-4 text-[#0A7E8C]" /> Call: 8983821993
               </a>
             </div>
           </motion.div>
