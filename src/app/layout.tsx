@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     icon: "/icon.png",
     apple: "/apple-icon.png",
   },
+  verification: {
+    google: "Pzdj_MwXYnhMcWWXqcd5V7aizqlv_Ro-rIF5-CawfJY",
+  },
   openGraph: {
     title: "Dr. Chavhan's Multispeciality Dental Clinic",
     description: "Advanced, painless & affordable dental care in Aundh, Pune. Book your appointment now! Call: +91 89758 89746 / 8983821993.",
