@@ -14,8 +14,36 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Chavhan's Multispeciality Dental Clinic — 5.0★ Rated Care in Aundh, Pune",
-  description: "Experience precision multispeciality dental treatments in Aundh, Pune led by expert hands (Dr. Guru, BDS, MDS). Advanced digital diagnostics, orthodontic aligners, implants & 100% sterilization.",
+  metadataBase: new URL("https://drchavhanmultispecialitydentalclinic.com"),
+  title: "Dr. Chavhan's Multispeciality Dental Clinic — Aundh, Pune",
+  description: "Dr. Chavhan's Multispeciality Dental Clinic in Aundh, Pune. Advanced, painless & affordable dental care for the entire family. Call: +91 89758 89746 / 8983821993.",
+  keywords: ["Dental Clinic Aundh", "Dr Chavhan Dental", "Dentist in Aundh Pune", "Root Canal Treatment Aundh", "Dental Implants Pune"],
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
+  openGraph: {
+    title: "Dr. Chavhan's Multispeciality Dental Clinic",
+    description: "Advanced, painless & affordable dental care in Aundh, Pune. Book your appointment now! Call: +91 89758 89746 / 8983821993.",
+    url: "https://drchavhanmultispecialitydentalclinic.com",
+    siteName: "Dr. Chavhan's Multispeciality Dental Clinic",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dr. Chavhan's Multispeciality Dental Clinic Signboard",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dr. Chavhan's Multispeciality Dental Clinic",
+    description: "Advanced, painless & affordable dental care in Aundh, Pune. Call: +91 89758 89746",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({

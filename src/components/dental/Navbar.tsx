@@ -129,10 +129,10 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                 <Calendar className="w-5 h-5" /> Book Appointment Now
               </button>
               <a
-                href="tel:8983821993"
+                href="tel:8975889746"
                 className="w-full py-3 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm flex items-center justify-center gap-2"
               >
-                <PhoneCall className="w-4 h-4 text-[#0A7E8C]" /> Call: 8983821993
+                <PhoneCall className="w-4 h-4 text-[#0A7E8C]" /> Call: +91 89758 89746
               </a>
             </div>
           </motion.div>
