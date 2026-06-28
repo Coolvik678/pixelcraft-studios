@@ -16,7 +16,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://drchavhanmultispecialitydentalclinic.com"),
   title: "Dr. Chavhan's Multispeciality Dental Clinic — Aundh, Pune",
-  description: "Dr. Chavhan's Multispeciality Dental Clinic in Aundh, Pune. Advanced, painless & affordable dental care for the entire family. Call: +91 89758 89746 / 8983821993.",
+  description: "Dr. Chavhan's Multispeciality Dental Clinic in Aundh, Pune. Advanced, painless & affordable dental care. Call: 8983821993 | Appointment & WhatsApp: 8975889746.",
   keywords: ["Dental Clinic Aundh", "Dr Chavhan Dental", "Dentist in Aundh Pune", "Root Canal Treatment Aundh", "Dental Implants Pune"],
   icons: {
     icon: "/icon.png",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Dr. Chavhan's Multispeciality Dental Clinic",
-    description: "Advanced, painless & affordable dental care in Aundh, Pune. Book your appointment now! Call: +91 89758 89746 / 8983821993.",
+    description: "Advanced, painless & affordable dental care in Aundh, Pune. Call: 8983821993 | Appointment & WhatsApp: 8975889746.",
     url: "https://drchavhanmultispecialitydentalclinic.com",
     siteName: "Dr. Chavhan's Multispeciality Dental Clinic",
     images: [
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Dr. Chavhan's Multispeciality Dental Clinic",
-    description: "Advanced, painless & affordable dental care in Aundh, Pune. Call: +91 89758 89746",
+    description: "Advanced, painless & affordable dental care in Aundh, Pune. Call: 8983821993 | WhatsApp: 8975889746.",
     images: ["/og-image.jpg"],
   },
 };
