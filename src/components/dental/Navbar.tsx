@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Calendar, Globe, PhoneCall } from "lucide-react";
 
@@ -34,8 +35,14 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-teal-50 text-[#0A7E8C] flex items-center justify-center border border-[#0A7E8C]/20 transition-transform group-hover:scale-105 flex-shrink-0">
-              <Globe className="w-4 h-4" />
+            <div className="w-8 h-8 rounded-lg overflow-hidden border border-[#0A7E8C]/20 transition-transform group-hover:scale-105 flex-shrink-0 relative">
+              <Image
+                src="/logo.png"
+                alt="Dr. Chavhan's Dental Clinic Logo"
+                fill
+                className="object-cover"
+                unoptimized
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-heading font-semibold text-base sm:text-lg text-slate-900 tracking-wide">
